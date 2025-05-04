@@ -2,39 +2,19 @@ import { Text, View, Button, StyleSheet } from "react-native";
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Pusher from "pusher-js/react-native";
+import subscribeToPusher from "./utils/SocetsSetup";
 
+type MessageData = {
+  message: string;
+};
 export default function Index() {
 
   const [message, setMessage] = useState<string>('Waiting for message...');
 
   useEffect(() => {
-    // Replace with your Reverb config values
-    const pusher = new Pusher('local', {
-      cluster: 'mt1',
-      wsHost: '192.168.1.7',
-      wsPort: 8080,
-      forceTLS: false,
-      disableStats: true,
-      enabledTransports: ['ws'],
+    subscribeToPusher("chat", "message.sent", (data: MessageData) => {
+      console.log("Received message:", data.message, "nana e naut ");
     });
-
-    const channel = pusher.subscribe('chat');
-
-    // Confirm subscription success
-    channel.bind('pusher:subscription_succeeded', () => {
-      console.log('✅ Subscribed to chat channel');
-    });
-
-    channel.bind('message.sent', (data: any) => {
-      console.log('🔥 Received data:', data);
-      setMessage(data.message); // Set state with received message
-    });
-
-
-    return () => {
-      channel.unbind_all();
-      channel.unsubscribe();
-    };
   }, []);
 
   return (

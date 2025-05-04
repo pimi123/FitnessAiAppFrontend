@@ -1,8 +1,12 @@
-import { Text, View, Button, StyleSheet } from "react-native";
+import { Text, View, Button, StyleSheet, Image } from "react-native";
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Pusher from "pusher-js/react-native";
-import subscribeToPusher from "../../utils/SocetsSetup";
+import { icons } from "../../constants/icons"
+import { colors } from "../../constants/colors"
+import { TabIconProps } from "../../constants/interfaces"
+import FlameStreaksIcon from "../../assets/images/adaptive-icon.png"
+
+
+
 
 type MessageData = {
     message: string;
@@ -10,18 +14,8 @@ type MessageData = {
 export default function Index() {
 
     const [message, setMessage] = useState<string>('Waiting for message...');
-
-    useEffect(() => {
-        subscribeToPusher("chat", "message.sent", (data: MessageData) => {
-            console.log("Received message:", data.message, "qa llsasdasd+65544555448");
-            setMessage(data.message);
-        });
-
-    }, []);
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Live Message from Laravel Reverb:</Text>
-            <Text style={styles.message}>{message}</Text>
         </View>
     );
 };
@@ -32,6 +26,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: colors.screenBackground,
         padding: 20,
     },
     title: {

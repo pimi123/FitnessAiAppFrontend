@@ -18,9 +18,16 @@ const pusherInstance = new Pusher("local", {
  * @returns {object} An object containing the channel and callback for later unbinding
  */
 const subscribeToPusher = (channelName, eventName, callback) => {
-  console.log(channelName, eventName);
   const channel = pusherInstance.subscribe(channelName);
   channel.bind(eventName, callback);
+
+  return {
+    channel,
+    unsubscribe: () => {
+      channel.unbind(eventName, callback);
+      pusherInstance.unsubscribe(channelName);
+    },
+  };
 };
 
 export default subscribeToPusher;

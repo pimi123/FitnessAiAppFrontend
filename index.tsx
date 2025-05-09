@@ -2,7 +2,7 @@ import { Text, View, Button, StyleSheet } from "react-native";
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Pusher from "pusher-js/react-native";
-import subscribeToPusher from "./utils/SocetsSetup";
+import subscribeToPusher from "./src/services/SocetsSetup";
 
 type MessageData = {
   message: string;

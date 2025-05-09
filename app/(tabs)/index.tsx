@@ -1,8 +1,8 @@
 import { Text, View, Button, StyleSheet, Image } from "react-native";
 import React, { useEffect, useState } from 'react';
-import { icons } from "../../constants/icons"
-import { colors } from "../../constants/colors"
-import { TabIconProps } from "../../constants/interfaces"
+import { icons } from "../../src/constants/icons"
+import { colors } from "../../src/constants/colors"
+import { TabIconProps } from "../../src/constants/interfaces"
 import FlameStreaksIcon from "../../assets/images/adaptive-icon.png"
 
 

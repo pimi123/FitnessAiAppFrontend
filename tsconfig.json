@@ -13,9 +13,9 @@
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
     "nativewind-env.d.ts",
-    "utils/SocetsSetup.js",
-    "types/svg.d.ts",
-    "types/images.d.ts",
-    "types/images.d.ts" 
+    "src/services/SocetsSetup.js",
+    "src/types/svg.d.ts",
+    "src/types/images.d.ts",
+    "src/types/images.d.ts" 
   ]
 }

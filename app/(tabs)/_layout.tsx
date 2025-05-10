@@ -53,9 +53,9 @@ export default function Layout() {
                 }}
             />
             <Tabs.Screen
-                name="fitness"
+                name="workouts"
                 options={{
-                    title: "Fitness",
+                    title: "Workouts",
                     headerShown: false,
                     tabBarIcon: ({ focused }) => (
                         <TabIcon focused={focused} icon={icons.navWorkoutIcon} />

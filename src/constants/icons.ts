@@ -9,4 +9,10 @@ export const icons = {
     navDieteIcon: require('../../assets/icons/nav-diet-icon.png'),
     navProgressIcon: require('../../assets/icons/nav-progress-icon.png'),
     navPersonIcon: require('../../assets/icons/nav-person-icon.png'),
+    preMadePlansPasive: require('../../assets/icons/pre-made-plans-pasive.png'),
+    preMadePlansActive: require('../../assets/icons/pre-made-plans-active.png'),
+    regularPlansActive: require('../../assets/icons/verify-icon.png'),
+    regularPlansPasive: require('../../assets/icons/regular-plan-icon-pasive.png')
+
+
 };

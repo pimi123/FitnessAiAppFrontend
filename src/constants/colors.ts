@@ -1,6 +1,6 @@
 export const colors = {
 
-    primaryText: "#FFFFFFF",
+    primaryText: "#FFFF",
     cardBackground: "#1F3D5C", // Custom secondary color
     baseButton: "#07A29D", // Custom accent color
     screenBackground: "#0A1F3C", // Background color

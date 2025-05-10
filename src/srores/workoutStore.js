@@ -9,19 +9,19 @@ const useWorkoutStore = create((set) => ({
   setWorkouts: (data) => set({ workouts: data }),
 
   fetchWorkouts: async () => {
-    console.log("test");
+    // console.log("test");
 
     set({ isLoading: true, error: null });
     try {
       const data = await fetchUserWorkouts();
 
       if (!data.error) {
-        set({ workouts: data.data, isLoading: false });
+        set({ workouts: data.data[0], isLoading: false });
       } else {
         set({ error: true });
       }
 
-      console.log(data);
+      // console.log(data.data[0]);
     } catch (err) {
       set({ isLoading: false, error: err.message });
     }
